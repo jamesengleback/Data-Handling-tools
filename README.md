@@ -14,4 +14,9 @@ The Differences in absorbance at around 280 nm I think are a result of is known 
 
 If we plot how much the absorbance changes at 390 and 420 nm in response to adding my compound we get this:
 ![MichaelisMenten](20190427UVVis_Michaelis_Menten_plot.png)
-This [Michaelis-Menten saturation curve ](https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics) was fit to the data points by parameterising the e
+This [Michaelis-Menten saturation curve ](https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics) was fit to the data points by parameterising the Michaelis Menten equation:
+
+![Equation](imgtemp_fvm3rs-1.png)
+
+Where x is the concentration of the compound, y is the change in absorbance in response to that, and we want to work out the two constants, vmax and kd. I'm using the curve fitting fuction in [Scipy](https://www.scipy.org/) to minimise the R^2 of my model.
+The [K_m](https://en.wikipedia.org/wiki/Dissociation_constant) metric is a fairly typical measure of how tight a compound binds to an enzyme, where lower means tighter bound. In this case, my [compound](https://pubchem.ncbi.nlm.nih.gov/compound/Fluazifop) bound with a K_d of about 50 uM, which is relatively promising if we want to engineer this enzyme to break it down (we don't right now).
